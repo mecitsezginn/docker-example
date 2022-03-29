@@ -1,14 +1,19 @@
 version: "3.4"
 services:
+  # todo-app image adi
   todo-app:
     container_name: dc-todo-app
     build: .
     ports:
       - 3000:3000
+  
+  # mongodb image adi
   mongodb:
+    # mongo image ni calistir
     image: mongo
     ports:
       - 27017:27017
+    # mongo valume veri yolu
     volumes:
       - todo-app-data:/data/db
 volumes:
